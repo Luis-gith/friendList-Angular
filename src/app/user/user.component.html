@@ -1,15 +1,17 @@
-<div class ="container">
+<div class ="container" *ngFor = "let user of users">
     <div class = "card">
-        <h3 class="text-center"> Users List</h3>
+        <div class="card-header">User {{user.id}}</div>
         <div class = "card-body">
-                <tbody>
-                    <tr *ngFor = "let user of users">
-                        <td> {{ user.id }}</td>
-                        <td> {{ user.firstName }}</td>
-                        <td> {{ user.lastName }}</td>
-                        <td> {{ user.major }}</td>
-                    </tr>
-                </tbody>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">First Name: {{user.firstName}}</li>
+                <li class="list-group-item">Last Name: {{user.lastName}}</li>
+                <li class="list-group-item">Major in: {{user.major}}</li>
+                <li class="list-group-item">Institution: </li>
+            </ul>
+
+            <button class="btn btn-primary">See more</button>
+            <button class="btn btn-danger">Delete friend</button>
         </div>
     </div>
 </div>

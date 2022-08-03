@@ -1,0 +1,16 @@
+.card-header {
+    font-size: large;
+    font-weight: 700;
+}
+.card {
+    width: 18rem;
+    margin-top: 2rem;
+}
+
+.list-group {
+    align-content: space-around;
+    margin-bottom: 5px;
+}
+.list-group-item {
+    margin-top: 2px;
+}
