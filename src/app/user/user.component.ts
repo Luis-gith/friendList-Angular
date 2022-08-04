@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../user';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-user',
@@ -12,8 +13,9 @@ import { NgForm } from '@angular/forms';
 export class UserComponent implements OnInit {
 
   public users: User[] = [];
-  public editUser: User | null | undefined;
+  public editUser: User = new User;
   public deleteUser!: User;
+ 
 
   constructor(private userService: UserService) { }
 
@@ -108,7 +110,7 @@ public onOpenModal(user: User | null | undefined, mode: string): void {
     this.deleteUser = user!;
     button.setAttribute('data-target', '#deleteUserModal');
   }
-  container?.appendChild(button);
+  container!.appendChild(button);
   button.click();
 }
 
