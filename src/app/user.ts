@@ -3,4 +3,6 @@ export class User {
     firstName: String = '';
     lastName: String = '';
     major: String = '';
+    birthday: String = '';
+    phoneNumber: String = '';
 }
