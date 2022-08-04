@@ -11,8 +11,8 @@ import { NgForm } from '@angular/forms';
 })
 export class UserComponent implements OnInit {
 
-  public users!: User[];
-  public editUser!: User;
+  public users: User[] = [];
+  public editUser: User | null | undefined;
   public deleteUser!: User;
 
   constructor(private userService: UserService) { }
@@ -91,22 +91,22 @@ export class UserComponent implements OnInit {
   }
 }
 
-public onOpenModal(user: User, mode: string): void {
+public onOpenModal(user: User | null | undefined, mode: string): void {
   const container = document.getElementById('main-container');
   const button = document.createElement('button');
   button.type = 'button';
   button.style.display = 'none';
   button.setAttribute('data-toggle', 'modal');
   if (mode === 'add') {
-    button.setAttribute('data-target', '#addEmployeeModal');
+    button.setAttribute('data-target', '#addUserModal');
   }
   if (mode === 'edit') {
-    this.editUser = user;
-    button.setAttribute('data-target', '#updateEmployeeModal');
+    this.editUser = user!;
+    button.setAttribute('data-target', '#updateUserModal');
   }
   if (mode === 'delete') {
-    this.deleteUser = user;
-    button.setAttribute('data-target', '#deleteEmployeeModal');
+    this.deleteUser = user!;
+    button.setAttribute('data-target', '#deleteUserModal');
   }
   container?.appendChild(button);
   button.click();

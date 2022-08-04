@@ -5,10 +5,11 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { FormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
   ],
   imports: [
     BrowserModule,
